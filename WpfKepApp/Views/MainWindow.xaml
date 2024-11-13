@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfKepApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Інтернет-магазин" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="productDataGrid" AutoGenerateColumns="False" CanUserAddRows="True" CanUserDeleteRows="True" IsReadOnly="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Назва" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Початкова ціна" Binding="{Binding Price}" />
+                <DataGridTextColumn Header="Знижка" Binding="{Binding GetFormattedDiscount}" />
+                <DataGridTextColumn Header="Ціна" Binding="{Binding GetPriceAfterDiscount}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Знайти товар з мінімальною ціною" HorizontalAlignment="Right" VerticalAlignment="Top" Width="200" Click="FindMinPriceProduct_Click"/>
+        <TextBlock x:Name="minPriceProductText" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" Width="300" Padding="20 20 20 20"/>
+    </Grid>
+</Window>
